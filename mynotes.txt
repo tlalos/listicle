@@ -1,0 +1,4 @@
+#GIT COMMIT
+git commit -m "After auth screens finished"
+git push origin master
+
