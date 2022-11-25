@@ -4,15 +4,13 @@ import {styles} from './styles';
 import Button from '../../../components/Button/index.js';
 
 const Splash = ({navigation}) => {
-
-  const onSignup= () =>{
+  const onSignup = () => {
     navigation.navigate('Signup');
-  }
+  };
 
-  const onSignin= () =>{
+  const onSignin = () => {
     navigation.navigate('Signin');
-  }
-
+  };
 
   return (
     <View style={styles.container}>
@@ -26,7 +24,9 @@ const Splash = ({navigation}) => {
         <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
         <Text style={styles.title}>Here!</Text>
       </View>
-      <Button onPress={onSignup} title="Sign Up" />
+      <View style={{width:'100%',flexDirection:'row'}}>
+        <Button onPress={onSignup} title="Sign Up" />
+      </View>
 
       <Pressable onPress={onSignin} hitSlop={20}>
         <Text style={styles.footerText}>Sign In</Text>

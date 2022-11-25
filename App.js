@@ -6,6 +6,7 @@ import Signin from './src/screens/auth/Signin';
 import Favorites from './src/screens/app/Favorites';
 import Home from './src/screens/app/Home';
 import Profile from './src/screens/app/Profile';
+import ProductDetails from './src/screens/app/ProductDetails';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Config from 'react-native-config';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
@@ -81,11 +82,18 @@ const App = () => {
       <NavigationContainer theme={theme}>
         <Stack.Navigator>
           {isSignedIn ? (
+            <>
             <Stack.Screen
               name="Tabs"
               component={Tabs}
               options={{headerShown: false}}
             />
+            <Stack.Screen
+              name="ProductDetails"
+              component={ProductDetails}
+              options={{headerShown: false}}
+            />
+            </>
           ) : (
             <>
               <Stack.Screen
