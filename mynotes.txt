@@ -5,3 +5,9 @@ git push origin master
 
 #GIT PULL FROM REPOSITORY
  git pull origin master
+
+ #RESET LOCAL REPOSITORY TO LAST COMMIT
+ git reset --hard
+
+ #DISCARD AN INDIVIDUAL FILE FROM REMOTE TO LOCAL (RESET A LOCAL FILE FROM REMOTE)
+ git checkout filename.md
