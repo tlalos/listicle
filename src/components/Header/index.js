@@ -10,7 +10,7 @@ const Header = ({
   showLogout,
   showSearch,
   onSearch,
-  value, 
+  value,
   showBack,
 }) => {
   const [showSearchInput, setShowSearchInput] = useState(false);
@@ -19,14 +19,13 @@ const Header = ({
     setShowSearchInput(s => !s);
   };
 
-  
-
   return (
     <View style={styles.mainContainer}>
       <View style={styles.container}>
         {showBack ? (
           <Pressable hitSlop={20} onPress={onBackPress}>
             <Image
+              resizeMode={'contain'}
               style={styles.icon}
               source={require('../../assets/back.png')}
             />
@@ -53,7 +52,13 @@ const Header = ({
           <View style={styles.space} />
         )}
       </View>
-      {showSearchInput ? <Input onChangeText={onSearch} value={value} placeholder="Type your keyword..." /> : null}
+      {showSearchInput ? (
+        <Input
+          onChangeText={onSearch}
+          value={value}
+          placeholder="Type your keyword..."
+        />
+      ) : null}
     </View>
   );
 };

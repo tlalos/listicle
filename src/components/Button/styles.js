@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
     color:colors.white,
     textAlign:'center',
     fontSize:16,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    
   }
 });
 

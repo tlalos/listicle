@@ -1,30 +1,23 @@
-import {StyleSheet} from 'react-native';
+import {ImageBackground, StyleSheet} from 'react-native';
 import {colors} from '../../../utils/colors';
 
 export const styles = StyleSheet.create({
   container: {
     padding: 24,
+    flex: 1,
   },
-  agreeRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  agreeText: {
-    color: colors.blue,
-    marginHorizontal: 13,
-  },
-  agreeTextBold: {
+  name: {
+    fontSize: 20,
     fontWeight: 'bold',
+    color: colors.black,
+    marginBottom: 12,
   },
-  button: {
-    marginVertical: 20,
+  email: {
+    fontSize: 14,
+    color: colors.grey,
+    marginBottom: 16,
   },
-  footerText:{
-    color:colors.blue,
-    marginBottom:56,
-    textAlign:'center'
+  content: {
+    flex: 1,
   },
-  footerLink:{
-    fontWeight:'bold'
-  }
 });

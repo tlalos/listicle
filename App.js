@@ -4,6 +4,8 @@ import Splash from './src/screens/auth/Splash';
 import Signup from './src/screens/auth/Signup';
 import Signin from './src/screens/auth/Signin';
 import Favorites from './src/screens/app/Favorites';
+import Settings from './src/screens/app/Settings';
+import CreateListing from './src/screens/app/CreateListing';
 import Home from './src/screens/app/Home';
 import Profile from './src/screens/app/Profile';
 import ProductDetails from './src/screens/app/ProductDetails';
@@ -21,6 +23,28 @@ const Tab = createBottomTabNavigator();
 const WEB_CLIENT_ID =
   '998864933772-vustcu5cho7m8au04efr1c5icuma7aq0.apps.googleusercontent.com';
 
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="CreateListing"
+        component={CreateListing}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const Tabs = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
@@ -31,7 +55,7 @@ const Tabs = () => (
           icon = focused
             ? require('./src/assets/home_active.png')
             : require('./src/assets/home.png');
-        } else if (route.name === 'Profile') {
+        } else if (route.name === 'ProfileStack') {
           icon = focused
             ? require('./src/assets/profile_active.png')
             : require('./src/assets/profile.png');
@@ -42,7 +66,13 @@ const Tabs = () => (
         }
 
         // You can return any component that you like here!
-        return <Image style={{width: 24, height: 24}} source={icon} />;
+        return (
+          <Image
+            resizeMode={'contain'}
+            style={{width: 24, height: 24}}
+            source={icon}
+          />
+        );
       },
       headerShown: false,
       tabBarShowLabel: false,
@@ -50,7 +80,7 @@ const Tabs = () => (
     })}>
     <Tab.Screen name="Home" component={Home} />
     <Tab.Screen name="Favorites" component={Favorites} />
-    <Tab.Screen name="Profile" component={Profile} />
+    <Tab.Screen name="ProfileStack" component={ProfileStack} />
   </Tab.Navigator>
 );
 
@@ -83,16 +113,16 @@ const App = () => {
         <Stack.Navigator>
           {isSignedIn ? (
             <>
-            <Stack.Screen
-              name="Tabs"
-              component={Tabs}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="ProductDetails"
-              component={ProductDetails}
-              options={{headerShown: false}}
-            />
+              <Stack.Screen
+                name="Tabs"
+                component={Tabs}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="ProductDetails"
+                component={ProductDetails}
+                options={{headerShown: false}}
+              />
             </>
           ) : (
             <>
