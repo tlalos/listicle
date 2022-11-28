@@ -3,4 +3,5 @@ git add .
 git commit -m "After auth screens finished"
 git push origin master
 
-test
+#GIT PULL FROM REPOSITORY
+ git pull origin master
