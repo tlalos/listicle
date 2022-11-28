@@ -19,7 +19,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
+ 
 const WEB_CLIENT_ID =
   '998864933772-vustcu5cho7m8au04efr1c5icuma7aq0.apps.googleusercontent.com';
 
