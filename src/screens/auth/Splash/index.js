@@ -2,8 +2,10 @@ import React from 'react';
 import {Text, Image, View, Pressable} from 'react-native';
 import {styles} from './styles';
 import Button from '../../../components/Button/index.js';
+import {UserContext} from '../../../../App';
 
 const Splash = ({navigation}) => {
+  
   const onSignup = () => {
     navigation.navigate('Signup');
   };
@@ -24,7 +26,7 @@ const Splash = ({navigation}) => {
         <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
         <Text style={styles.title}>Here!</Text>
       </View>
-      <View style={{width:'100%',flexDirection:'row'}}>
+      <View style={{width: '100%', flexDirection: 'row'}}>
         <Button onPress={onSignup} title="Sign Up" />
       </View>
 

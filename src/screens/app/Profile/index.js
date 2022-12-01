@@ -16,6 +16,10 @@ const Profile = ({navigation}) => {
     navigation.navigate('CreateListing');
   };
 
+  const onMyListingsPress = () => {
+    navigation.navigate('MyListings');
+  };
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <Header title="Profile" showLogout onLogout={onLogout} />
@@ -23,7 +27,7 @@ const Profile = ({navigation}) => {
         <View style={styles.content}>
           <Text style={styles.name}>User name</Text>
           <Text style={styles.email}>User email</Text>
-          <ListItem title="My Listings" subtitle="You have 10 listings" />
+          <ListItem onPress={onMyListingsPress} title="My Listings" subtitle="You have 10 listings" />
           <ListItem
             onPress={onSettingsPress}
             title="Settings"

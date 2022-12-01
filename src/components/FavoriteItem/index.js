@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Pressable, View, Text, Image} from 'react-native';
 import {styles} from './styles';
 
-const FavoriteItem = ({title, price, image, onPress}) => {
+const FavoriteItem = ({title, price, icon,image, onPress}) => {
   return (
     <Pressable onPress={onPress} style={styles.container}>
       <Image style={styles.image} source={{uri: image}} />
@@ -10,7 +10,7 @@ const FavoriteItem = ({title, price, image, onPress}) => {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.price}>{price}</Text>
       </View>
-      <Image style={styles.icon} source={require('../../assets/remove.png')} />
+      <Image style={styles.icon} source={ icon || require('../../assets/remove.png')} />
     </Pressable>
   );
 };
